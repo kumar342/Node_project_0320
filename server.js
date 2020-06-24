@@ -8,15 +8,11 @@ app.use(express.json());
 app.use(cors());
 
 const db =
-  "mongodb+srv://hemanth:kumar@cluster0-xhozu.mongodb.net/test?retryWrites=true&w=majority";
+  "mongodb+srv://hemraj:hemraj@clusterdev-sndjb.mongodb.net/test?retryWrites=true&w=majority";
 const connect = mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB Connected..."))
-  .catch(err => console.log(err));
-
-// app.use("/", (req, res) => {
-//   res.send("Hello");
-// });
+  .catch((err) => console.log(err));
 
 app.use("/", routes);
 
